@@ -1,0 +1,123 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Fashion Feet</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+ 
+</head>
+<body class="hold-transition sidebar-mini">
+	
+	<div class="wrapper">
+		
+		<!-- Navbar -->
+		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+		<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				<a class="nav-link" data-widget="pushmenu" href="#" role="button"> 
+                                           <i class="fas fa-bars"></i></a>
+				</li>
+				<li class="nav-item d-none d-sm-inline-block">
+				<a href="/" class="nav-link">Home</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
+		
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+		<!-- Brand Logo -->
+			<a href="/" class="brand-link">
+			  <img src=""
+				   alt=""
+				   class="brand-image img-circle elevation-3">
+			  <span class="brand-text font-weight-light">Fashion Feet</span>
+			</a>
+			<!-- Sidebar -->
+			<div class="sidebar">
+			<!-- Sidebar Menu -->
+  <nav class="mt-2">
+	<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	  <li class="nav-item">
+		<a href="/add" class="nav-link">
+		  <i class="nav-icon far fa-circle text-info"></i>
+		  <p>Add Product</p>
+		</a>
+	  </li>
+	  <li class="nav-item">
+		<a href="/details" class="nav-link">
+		  <i class="nav-icon far fa-circle text-info"></i>
+		  <p class="text">Sales Details</p>
+		</a>
+	  </li>
+	  <li class="nav-item">
+		<a href="/update" class="nav-link">
+		  <i class="nav-icon far fa-circle text-info"></i>
+		  <p class="text">Update Sales Details</p>
+		</a>
+	  </li>
+	  
+      
+	  
+	</ul>
+</nav>
+<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+		
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			
+			<section class="content-header">
+				<h1>Fashion Feet Inventory Management</h1>
+			</section>
+			
+			<section class="content">
+				<div class="card">
+                    <div class="card-header">Add product Stock</div>
+                      <h3 class="card-title"></h3>
+
+                        <br>
+                        
+                    <div class="card-body p-0" >
+						<form action="/added" method="POST">
+							<label>Product Id
+							   <br><input type="text" name="pid"   placeholder="Product Id">
+							</label>
+							<br>
+							<label >Brand<br><input type="text" name="brand"  placeholder="Brand"></label>
+							<br>
+							<label >Category<br><input type="text" name="category"  placeholder="Category"></label>
+							<br>
+							<label >Product Name<br><input type="text" name="pn"  placeholder="Product Name"></label><br>
+							<label >Size<br><input type="text" name="Size"  placeholder="Size"></label><br>
+							<label >Quantity<br><input type="number" name="qnty" placeholder="Quantity"></label><br>
+							<label >Cost Price<br><input type="number" name="cp"  placeholder="Cost Price"></label><br>
+							<label >Selling Price<br><input type="number" name="sp" placeholder="Selling Price"></label>
+			
+                    </div>
+
+					<div class="card-footer">
+						
+							<input type="submit" value="Submit">         
+							<input type="button" value="Cancel">
+						</form>
+					</div>
+                    
+                </div>
+			</section>
+		</div>
+		
+	</div>
+</body>
+</html>
