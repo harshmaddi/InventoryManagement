@@ -28,7 +28,7 @@
                                            <i class="fas fa-bars"></i></a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block">
-				<a href="/" class="nav-link">Home</a>
+				<a href="/" class="nav-link"><i class="fas fa-home"></i>Home</a>
 				</li>
 			</ul>
 		</nav>
@@ -49,19 +49,19 @@
 	<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 	  <li class="nav-item">
 		<a href="/add" class="nav-link">
-		  <i class="nav-icon far fa-circle text-info"></i>
+		  <i class="fas fa-cart-plus"></i>
 		  <p>Add Product</p>
 		</a>
 	  </li>
 	  <li class="nav-item">
 		<a href="/details" class="nav-link">
-		  <i class="nav-icon far fa-circle text-info"></i>
+		  <i class="fas fa-database"></i>
 		  <p class="text">Sales Details</p>
 		</a>
     </li>
     <li class="nav-item">
     <a href="/update" class="nav-link">
-		  <i class="nav-icon far fa-circle text-info"></i>
+      <i class="fas fa-upload"></i>
 		  <p class="text">Update Sales Details</p>
 		</a>
 	  </li>
@@ -84,15 +84,10 @@
 			
 			<section class="content">
 				<div class="card">
-                    <div class="card-header">
-                      <h3 class="card-title">Stock Details</h3>
-                      <div class="card-tools">
-                        
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                          <i class="fas fa-minus"></i></button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                          <i class="fas fa-times"></i></button>
-                      </div>
+                    <div class="card-header bg-info">
+                      <h4>Sales Details</h4>
+                     
+                     </div>
                       <div class="card-body table-responsive p-0" style="height: 400px;">
                       <table class="table table-striped table-head-fixed text-nowrap">
                         <thead>
@@ -130,8 +125,9 @@
                         </tbody>
                     </table>
                     </div>
-                    </div>
+                    
                 </div>
+                <a class="btn btn-info " href="/add"><i class="fas fa-upload"></i> Update Sales Details</a>
 			</section>
 		</div>
 		
