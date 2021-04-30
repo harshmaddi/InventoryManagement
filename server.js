@@ -44,9 +44,9 @@ MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }, (e
                 'Category':req.body.category,
                 'Name':req.body.pn,
                 'Size':req.body.Size,
-                Quantity:req.body.qnty,
-                'Cost Price':req.body.cp,
-                'Selling Price':req.body.sp
+                Quantity:Number(req.body.qnty),
+                'Cost Price':Number(req.body.cp),
+                'Selling Price':Number(req.body.sp)
             }
 
             , function(err,result){
@@ -63,7 +63,7 @@ MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }, (e
                     var time_date = date + "-" + month + "-" + year;
                     db.collection('Sold').insertOne({
                         'Purchase Date': time_date, 
-                        'Product ID':(req.body.pid),
+                        'Product ID':Number(req.body.pid),
                         Quantity:req.body.qnty,
                         'Unit Price':Number(req.body.up),
                         'Sales':Number(req.body.qnty)*Number(req.body.up)
@@ -78,6 +78,8 @@ MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }, (e
         res.redirect('/details');
         });
     app.get('/delete',(req,res)=>
+
+
     {
         db.collection('Stocks').deleteOne({
             'Product ID':(req.query.pid)
@@ -89,29 +91,19 @@ MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }, (e
         });
     res.redirect('/');
     });
-    app.post('/edited',(req,res)=>
-    {
-        db.collection('Stocks').updateOne(
-        {
-            'Product ID':Number(req.body.pid)
-
-        },
-        {
-            $set:{
-                'Quantity':req.body.newq,
-                'Cost Price':req.body.newcp,
-                'Selling Price':req.body.newsp
+    app.post('/edited', (req, res) => {
+        db.collection('Stocks').updateOne({
+            'Product ID':(req.body.pid)
+        }, {
+            $set: {
+                'Quantity': Number(req.body.newq),
+                'Cost Price': Number(req.body.newcp),
+                'Selling Price': Number(req.body.newsp)
             }
-        },
-        {
-            function(err,result){
-                if(err) throw err;
-                console.log("1 data edited succesfully")
-            }
-                
-        }
-
-        );
+        }, (err, result) => {
+            if (err) throw err;
+            console.log("1 data edited succesfully");
+        });
         res.redirect('/');
     });
     app.get('/details', (req, res) => {
